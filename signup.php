@@ -11,12 +11,12 @@
 			<input type="Password" name="pwd" placeholder="Password">
 			<input type="text" name="first" placeholder="Firstname">
 			<input type="text" name="last" placeholder="Lastname">
-			<button type="submit" name="submit">Sign up</button>
+			<button type="submit" name="signup">Sign up</button>
 		</form>
 	</div>
 
 </section>
 
 <?php
-	include_once 'header.php';
+	include_once 'footer.php';
 ?>
