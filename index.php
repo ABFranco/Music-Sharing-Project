@@ -15,7 +15,7 @@
 				Sharing music is easy, but how about playing it with friends across devices?
 			</h2>
 			<p>
-				TuneSync is the solution to play music with your peers in a "DJ" like setting. <br>
+				Synco-Share is the solution to play music with your peers in a "DJ" like setting. <br>
 				Import music, create playlists, and take turns in playing your songs for others. 
 			</p>
 		</div>

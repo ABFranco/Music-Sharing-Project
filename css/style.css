@@ -116,10 +116,12 @@ body {
     background-color: #ccc;
 }
 
+/* header */
+
 header nav {
     width: 100%;
     height: 60px;
-    background-color: #fff;
+    background-color: lightsteelblue;
 }
 
 header nav ul {
@@ -179,19 +181,38 @@ header .nav-login form button:hover {
     background-color: #ccc;
 }
 
-header .nav-login a {
+
+
+header .main-wrapper a {
+    text-decoration: none;
+}
+
+.anchor {
+    margin: 10px;
+}
+header #index .btn-primary {
+    font-size: 25px;
+    background-color: lightsteelblue;
+    color: white;
+    font-family: "Arial Black";
+    text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black; 
+}
+
+header .main-wrapper .btn-primary {
     display: block;
-    width: 60px;
-    height: 60px;
+    height: 40px;
     border: none;
-    float: left;
-    background-color: #fff;
+    background-color: cornflowerblue;
     font-family: arial;
     font-size: 16px;
-    color: #111;
-    line-height: 63px;
+    color: #fff;
     cursor: pointer;
 }
+
+header .main-wrapper .btn-primary:hover {
+    background-color: royalblue;
+}
+
 
 /* homepage */
 .main-container {
@@ -218,7 +239,7 @@ body, html {
 
 .parallax {
     /* The image used */
-    background-image: url("equalizer.jpg");
+    background-image: url("../equalizer.jpg");
 
     /* Set a specific height */
     height: 100%; 
