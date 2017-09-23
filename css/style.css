@@ -353,3 +353,24 @@ body, html {
 #edit a {
     text-decoration: none;
 }
+
+/* my music */
+
+#music {
+    margin-top: 15px;
+}
+#music_table {
+    border-style: solid;
+    border-width: 2px;
+    border-color: slategray; 
+}
+
+#music_table + #music_table {
+    border-top: 0px;
+}
+
+#music_table #top {
+    background-color: midnightblue;
+    color: white;
+    font-weight: bold;
+}
