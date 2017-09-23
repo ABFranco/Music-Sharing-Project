@@ -22,6 +22,15 @@
 				</form>
 				';
 
+				// music player
+				echo '
+				<div class="audio">
+					<audio src="" controls id="audioPlayer">
+						html5 audio player not supported!
+					</audio>
+				</div>
+				';
+
 				$sql = "SELECT * FROM music WHERE userid = '$u_id' ORDER BY creation_time DESC";
 				$result = mysqli_query($conn, $sql);
 
@@ -41,10 +50,12 @@
 							<p>Genre</p>
 						</div>
 						<div class="col-xs-2" id="top">
-							<p>Playback</p>
+							<p>Options</p>
 						</div>
 					</div>
 				';
+
+
 				if (mysqli_num_rows($result) > 0) {
 					// output data of each row
 					while($row = mysqli_fetch_assoc($result)) {
@@ -65,10 +76,7 @@
 								<p>' . $row["genre"] . '</p>
 							</div>
 							<div class="col-xs-2">
-								<button type="button" class="btn btn-primary">Play</button>
-								<audio controls>
-									<source src="uploaded_music/'. $fileName .'" type="audio/mpeg">
-								</audio>
+								<a href="uploaded_music/'. $fileName .'"><button type="button" class="btn btn-primary">Play</button></a>
 							</div>
 						</div>
 						';
@@ -76,55 +84,31 @@
 				}
 
 				echo '</div>'; // end of container
-				/*
-				<div class="container" id="music">
-			<div class="row" id="account_table">
-				<div class="col-xs-6" id="account_table_right">
-					<div class="col-xs-5">
-						<p>Username</p>
-					</div>
-					<div class="col-xs-7">
-						<p id="account_info">' . $username . '</p>
-					</div>
-				</div>
-				<div class="col-xs-6" id="account_table_left">
-					<div class="col-xs-5">
-						<p>E-mail</p>
-					</div>
-					<div class="col-xs-7">
-						<p id="account_info">' . $email . '</p>
-					</div>
-				</div>
-			</div>
-			<div class="row" id="account_table">
-				<div class="col-xs-6" id="account_table_right">
-					<div class="col-xs-5">
-						<p>First Name</p>
-					</div>
-					<div class="col-xs-7">
-						<p id="account_info">' . $firstname . '</p>
-					</div>
-				</div>
-				<div class="col-xs-6" id="account_table_left">
-					<div class="col-xs-5">
-						<p>Last Name</p>
-					</div>
-					<div class="col-xs-7">
-						<p id="account_info">' . $lastname . '</p>
-					</div>
-				</div>
-
-			</div>
-		</div>
-		*/
 			}
 		?>
-
-		
 
 	</div>
 
 </section>
+
+<script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+<script>
+	audioPlayer();
+	function audioPlayer() {
+		var currentSong = 0;
+		//$("#audioPlayer")[0].src = $("#music a")[0];
+		$("#music a").click(function(e) {
+			e.preventDefault();
+			$("#audioPlayer")[0].src = this;
+			$("#audioPlayer")[0].play();
+
+			//currentSong = $(this).parent();
+			$("#music a").removeClass("currentSong");
+			$(this).addClass("currentSong");
+		});
+	}
+</script>
 
 <?php
 	include_once 'footer.php';
