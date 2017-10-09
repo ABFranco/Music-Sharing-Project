@@ -4,6 +4,7 @@
 
 <div class="parallax">
 	<h1 class="hello">Play music with your friends.</h1>
+
 </div>
 
 
@@ -19,11 +20,7 @@
 				Import music, create playlists, and take turns in playing your songs for others. 
 			</p>
 		</div>
-		<?php
-			if (isset($_SESSION['u_id'])) {
-				echo "You are logged in!";
-			}
-		?>
+
 	</div>
 
 </section>

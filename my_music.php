@@ -11,12 +11,26 @@
 			if (isset($_SESSION['u_id'])) {
 				echo '
 				<form action="upload.php" method="POST" enctype="multipart/form-data">
-					<input type="file" name="file">
-					<input type="text" name="song_name" placeholder="Song Name">
-					<input type="text" name="artist" placeholder="Artist">
-					<input type="text" name="album" placeholder="Album (optional)">
-					<input type="text" name="genre" placeholder="Genre (optional)">
-					<button type="submit" name="upload" class="btn btn-primary">Upload .mp3 file</button>
+					<div class="add">
+						<!--label class="choose_file">
+							<input type="file" name="file">
+							Choose file here
+						</label-->
+
+						<input type="file" name="file" id="file" class="inputfile" />
+						<label for="file">Choose a file</label>
+						
+					</div>
+					<div class="add">
+						<input type="text" name="song_name" placeholder="Song Name">
+						<input type="text" name="artist" placeholder="Artist">
+						<input type="text" name="album" placeholder="Album (optional)">
+						<input type="text" name="genre" placeholder="Genre (optional)">
+						
+					</div>
+					<div class="add">
+						<button type="submit" name="upload" class="btn btn-primary">Upload .mp3 file</button>
+					</div>
 
 					<input type="hidden" name="u_id" value=' . $u_id .'>
 				</form>
@@ -108,6 +122,26 @@
 			$(this).addClass("currentSong");
 		});
 	}
+
+	// for the upload file button
+	var inputs = document.querySelectorAll( '.inputfile' );
+	Array.prototype.forEach.call( inputs, function( input )
+	{
+		var label	 = input.nextElementSibling,
+			labelVal = label.innerHTML;
+
+		input.addEventListener( 'change', function( e )
+		{
+			var fileName = '';
+			fileName = e.target.value.split( '\\' ).pop();
+
+			console.log(fileName);
+			if( fileName )
+				label.innerHTML = 'selected file: ' + fileName;
+			else
+				label.innerHTML = labelVal;
+		});
+	});
 </script>
 
 <?php
