@@ -3,7 +3,7 @@
 ?>
 
 <div class="parallax">
-	<h1 class="hello">Play music with your friends.</h1>
+	<h1 class="hello">Upload and play your own music.</h1>
 
 </div>
 
@@ -13,11 +13,11 @@
 	<div class="main-wrapper">
 		<div style="height:500px;font-size:36px">
 			<h2>
-				Sharing music is easy, but how about playing it with friends across devices?
+				Create your own private account.
 			</h2>
 			<p>
-				Synco-Share is the solution to play music with your peers in a "DJ" like setting. <br>
-				Import music, create playlists, and take turns in playing your songs for others. 
+				Store your music on a server, and a database <br>
+				will link your account with your uploaded music.
 			</p>
 		</div>
 

@@ -16,13 +16,13 @@
 	<nav>
 		<div class="main-wrapper">
 			<ul>
-				<li class="anchor" id="index"><a href="index.php"><button type="button" class="btn btn-primary">Synco-Share</button></a></li>
+				<li class="anchor" id="index"><a href="index.php"><button type="button" class="btn btn-primary">Music-Sharer</button></a></li>
 				<?php  
 					if (isset($_SESSION['u_id'])) {
 						echo 
 
 						'
-						<li class = "anchor"><a href=music_rooms.php><button type="button" class="btn btn-primary">Music Rooms</button></a></li>
+						<!--li class = "anchor"><a href=music_rooms.php><button type="button" class="btn btn-primary">Music Rooms</button></a></li-->
 						<li class = "anchor"><a href=my_music.php><button type="button" class="btn btn-primary">My Music</button></a></li>
 						';
 					}
